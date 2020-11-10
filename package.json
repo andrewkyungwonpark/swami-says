@@ -4,7 +4,9 @@
   "description": "A React.js front-end app that tests the user's knowledge of American football",
   "main": "webpack.config.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "4.3.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
