@@ -1,0 +1,6 @@
+.env
+.idea
+.vscode
+.DS_Store
+server/public/main.js*
+node_modules

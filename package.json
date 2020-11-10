@@ -1,0 +1,22 @@
+{
+  "name": "swami-says",
+  "version": "1.0.0",
+  "description": "A React.js front-end app that tests the user's knowledge of American football",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewkyungwonpark/swami-says.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewkyungwonpark/swami-says/issues"
+  },
+  "homepage": "https://github.com/andrewkyungwonpark/swami-says#readme"
+}
