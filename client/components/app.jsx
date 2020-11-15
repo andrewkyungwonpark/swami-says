@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import MainMenu from './main-menu';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,13 +21,20 @@ export default class App extends React.Component {
   render() {
     const header = <Header mainMenu={this.setView} />;
     switch (this.state.view) {
+      case 'main-menu':
+        return (
+          <>
+            {header}
+            <MainMenu setView={this.setView} />
+          </>
+        );
       case 'starter':
         return (
           <>
             {header}
           </>
         );
-      case 'all-pro':
+      case 'pro-bowl':
         return (
           <>
             {header}
