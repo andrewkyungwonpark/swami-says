@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class MainMenu extends React.Component {
+class MainMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,11 @@ export default class MainMenu extends React.Component {
 
   changeDifficulty(event) {
     event.preventDefault();
-
+    if (`${this.state.difficulty}` === event.target.value) {
+      this.setState({
+        difficulty: event.target.value
+      });
+    }
   }
 
   render() {
@@ -48,3 +52,5 @@ export default class MainMenu extends React.Component {
     );
   }
 }
+
+export default MainMenu;
