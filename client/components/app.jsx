@@ -6,7 +6,6 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       view: 'main-menu'
     };
     this.setView = this.setView.bind(this);
@@ -20,32 +19,11 @@ export default class App extends React.Component {
 
   render() {
     const header = <Header mainMenu={this.setView} />;
-    switch (this.state.view) {
-      case 'main-menu':
-        return (
-          <>
-            {header}
-            <MainMenu setView={this.setView} />
-          </>
-        );
-      case 'starter':
-        return (
-          <>
-            {header}
-          </>
-        );
-      case 'pro-bowl':
-        return (
-          <>
-            {header}
-          </>
-        );
-      case 'hall-of-fame':
-        return (
-          <>
-            {header}
-          </>
-        );
-    }
+    return (
+      <>
+        {header}
+        <MainMenu setView={this.setView} />
+      </>
+    );
   }
 }
