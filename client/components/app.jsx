@@ -6,7 +6,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'main-menu'
+      view: 'main-menu',
+      difficulty: null
     };
     this.setView = this.setView.bind(this);
   }
@@ -15,6 +16,12 @@ export default class App extends React.Component {
     this.setState(state => ({
       view: params
     }));
+  }
+
+  componentDidMount() {
+    this.setState({
+      view: 'main-menu'
+    });
   }
 
   render() {
