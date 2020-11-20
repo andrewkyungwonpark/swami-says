@@ -2,12 +2,11 @@
   "name": "swami-says",
   "version": "1.0.0",
   "description": "A React.js front-end app that tests the user's knowledge of American football",
-  "main": "server/index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "client": "webpack-dev-server",
-    "start": "node server/index.js",
-    "build": "webpack --mode=production",
-    "dev": "npm-run-all --silent --parallel start client"
+    "build": "webpack",
+    "watch": "webpack --watch --mode=development --devtool=source-map",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
     "hooks": {
@@ -21,9 +20,8 @@
     ]
   },
   "dependencies": {
-    "dotenv": "8.2.0",
-    "json-server": "0.15.1",
     "react": "16.12.0",
+    "react-audio-player": "0.14.0",
     "react-dom": "16.12.0"
   },
   "devDependencies": {
