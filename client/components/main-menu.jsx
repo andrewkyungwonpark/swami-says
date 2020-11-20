@@ -4,8 +4,7 @@ class MainMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      difficulty: null,
-      view: 'main-menu'
+      difficulty: 'main-menu'
     };
     this.changeDifficulty = this.changeDifficulty.bind(this);
   }
