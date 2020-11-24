@@ -5,9 +5,9 @@ export default function Header(props) {
     <header>
       <nav>
         <div className="btn-toolbar justify-content-between navbar-header pt-2 pb-5 pl-2 pr-2" role="toolbar" aria-label="Toolbar with btn groups">
-          <div className="btn-group mr-2" role="group">
+          <div className="btn-group mr-2 col col-lg-2 align-right" role="group">
             <button id="home-btn" type="button" className="btn btn-default" onClick={ () => { props.mainMenu('main-menu'); }}>
-              <img className="home-football" src="../images/football-icon.png" />
+              <img className="football-img" src="../images/football-icon.png" />
             </button>
           </div>
         </div>

@@ -1,0 +1,39 @@
+* {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Graduate-Regular'
+}
+
+@font-face {
+  font-family: 'Graduate-Regular';
+  src: url('../font/Graduate-Regular.ttf');
+}
+
+body {
+  background-image: url('../images/football-background.jpg');
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: scale-down
+}
+
+.swami-title {
+  width: auto;
+  height: 200px;
+}
+
+.football-img {
+  width: 25px;
+  height: 25px
+}
+
+#home-btn:hover {
+  background-color: grey;
+}
