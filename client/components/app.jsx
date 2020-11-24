@@ -9,15 +9,16 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'main-menu',
-      difficulty: null
+      difficulty: 'main-menu',
+      isLoaded: null
     };
-    this.setView = this.setView.bind(this);
+    this.setDifficulty = this.setDifficulty.bind(this);
   }
 
-  setView(params) {
+  setDifficulty(difficulty) {
     this.setState(state => ({
-      view: params
+      difficulty: difficulty,
+      isLoaded: !this.state.isLoaded
     }));
   }
 
