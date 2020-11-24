@@ -6,16 +6,6 @@ class MainMenu extends React.Component {
     this.state = {
       view: 'main-menu'
     };
-    this.changeDifficulty = this.changeDifficulty.bind(this);
-  }
-
-  changeDifficulty(event) {
-    event.preventDefault();
-    if (`${this.state.difficulty}` === event.target.value) {
-      this.setState({
-        view: event.target.value
-      });
-    }
   }
 
   render() {
@@ -35,7 +25,7 @@ class MainMenu extends React.Component {
               <div className="card-body">
                 <h5 className="card-title">Starter</h5>
                 <p className="card-text">5 questions of basic knowledge</p>
-                <a href="#" className="btn btn-primary">Start Quiz!</a>
+                <a onClick={() => { this.props.setView('starter'); }} className="btn btn-warning">Start Quiz!</a>
               </div>
             </div>
           </div>
@@ -45,7 +35,7 @@ class MainMenu extends React.Component {
               <div className="card-body">
                 <h5 className="card-title">Pro Bowl</h5>
                 <p className="card-text">10 questions of intermediate knowledge of football</p>
-                <a href="#" className="btn btn-primary">Start Quiz!</a>
+                <a onClick={() => { this.props.setView('pro-bowl'); }} className="btn btn-warning">Start Quiz!</a>
               </div>
             </div>
           </div>
@@ -55,7 +45,7 @@ class MainMenu extends React.Component {
               <div className="card-body">
                 <h5 className="card-title">Hall of Fame</h5>
                 <p className="card-text">20 questions of advanced concepts</p>
-                <a href="#" className="btn btn-primary">Start Quiz!</a>
+                <a onClick={() => { this.setView('hall-of-fame'); }} className="btn btn-warning">Start Quiz!</a>
               </div>
             </div>
           </div>
