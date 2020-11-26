@@ -4,7 +4,7 @@ export default class HallOfFame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'hall-of-fame',
+      difficulty: 'hall-of-fame',
       counter: 0,
       questionId: 1,
       question: '',

@@ -4,7 +4,7 @@ export default class ProBowl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'pro-bowl',
+      difficulty: 'pro-bowl',
       counter: 0,
       questionId: 1,
       question: '',
