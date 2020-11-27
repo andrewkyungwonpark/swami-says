@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Question from './question';
 import QuestionCount from './question-count';
+import AnswerOptions from './answer-options';
 
 export default class Starter extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ export default class Starter extends React.Component {
         <div className="col-md-6 mb-3 d-flex">
           <div className="card">
             <div className="card-body">
+              <QuestionCount />
               <Question />
+              <AnswerOptions />
             </div>
           </div>
         </div>
