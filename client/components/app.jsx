@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
 import MainMenu from './main-menu';
-import Starter from './starter';
+import Starter from './starter-page';
 import ProBowl from './pro-bowl';
 import HallOfFame from './hall-of-fame';
 
