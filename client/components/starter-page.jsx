@@ -24,7 +24,25 @@ export default class Starter extends React.Component {
   }
 
   componentDidMount() {
+    const shuffleAnswers = quizQuestions.map(question => this.shuffleArray(question.answers));
 
+    this.setState({
+      question: quizQuestions[0].question,
+      answerOptions: shuffleAnswers[0]
+    });
+  }
+
+  shuffleArray(arr) {
+    let currentIndex = arr.length; let tempValue; let randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      tempValue = arr[currentIndex];
+      arr[currentIndex] = arr[randomIndex];
+      arr[randomIndex] = tempValue;
+    }
+    return arr;
   }
 
   // handleAnswerSelected(event) {
