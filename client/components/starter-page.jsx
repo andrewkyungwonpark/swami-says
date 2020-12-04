@@ -33,7 +33,9 @@ export default class Starter extends React.Component {
   }
 
   shuffleArray(arr) {
-    let currentIndex = arr.length; let tempValue; let randomIndex;
+    let currentIndex = arr.length;
+    let tempValue;
+    let randomIndex;
     while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
@@ -45,12 +47,36 @@ export default class Starter extends React.Component {
     return arr;
   }
 
-  // handleAnswerSelected(event) {
-  //   this.selectAnswer(event.currentTarget.value);
-  //   if (this.state.questionId < quizQuestions.length) {
-  //     setTimeout
-  //   }
-  // }
+  handleAnswerSelected(event) {
+    this.selectAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+      setTimeout(() => this.setNextQuestion(), 300);
+    } else {
+      setTimeout(() => this.setResults(this.getResults()), 300);
+    }
+  }
+
+  setUserAnswer(answer) {
+    this.setState(state => ({
+      answersCount: {
+        ...state.answersCount,
+        [answer]: (state.answerCount[answer] || 0) + 1
+      },
+      answer: answer
+    }));
+  }
+
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].questionText,
+      answerOptions: quizQuestions[counter].answerOptions,
+      answer: ''
+    });
+  }
 
   render() {
     return (

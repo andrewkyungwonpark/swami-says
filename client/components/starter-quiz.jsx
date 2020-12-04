@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import Question from './question';
 import QuestionCount from './question-count';
 import AnswerOptions from './answer-options';
@@ -23,10 +23,10 @@ export default function StarterQuiz(props) {
         <div className="card">
           <div className="card-body">
             <QuestionCount
-              counter={this.props.questionId}
-              total={this.props.questionTotal} />
+              counter={props.questionId}
+              total={props.questionTotal} />
             <Question
-              content={this.props.question} />
+              content={props.question} />
             <ul className="answer-options">
               {props.AnswerOptions.map(renderAnswerOptions)}
             </ul>
@@ -37,12 +37,12 @@ export default function StarterQuiz(props) {
   );
 }
 
-StarterQuiz.PropTypes = {
-  answer: PropTypes.string.isRequirde,
-  AnswerOptions: PropTypes.array.isRequired,
-  counter: PropTypes.number.isRequired,
-  question: PropTypes.string.isRequired,
-  questionId: PropTypes.number.isRequired,
-  questionTotal: PropTypes.number.isRequired,
-  onAnswerSelected: PropTypes.func.isRequired
+StarterQuiz.propTypes = {
+  answer: propTypes.string.isRequirde,
+  AnswerOptions: propTypes.array.isRequired,
+  counter: propTypes.number.isRequired,
+  question: propTypes.string.isRequired,
+  questionId: propTypes.number.isRequired,
+  questionTotal: propTypes.number.isRequired,
+  onAnswerSelected: propTypes.func.isRequired
 };
