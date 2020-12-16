@@ -47,15 +47,6 @@ export default class Starter extends React.Component {
     return arr;
   }
 
-  handleAnswerSelected(event) {
-    this.selectAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-      setTimeout(() => this.setNextQuestion(), 300);
-    } else {
-      setTimeout(() => this.setResults(this.getResults()), 300);
-    }
-  }
-
   setUserAnswer(answer) {
     this.setState(state => ({
       answersCount: {
@@ -64,6 +55,15 @@ export default class Starter extends React.Component {
       },
       answer: answer
     }));
+  }
+
+  handleAnswerSelected(event) {
+    this.selectAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+      setTimeout(() => this.setNextQuestion(), 300);
+    } else {
+      setTimeout(() => this.setResults(this.getResults()), 300);
+    }
   }
 
   setNextQuestion() {
@@ -76,6 +76,23 @@ export default class Starter extends React.Component {
       answerOptions: quizQuestions[counter].answerOptions,
       answer: ''
     });
+  }
+
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map(key => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+
+    return answersCountKeys.filter(key => answersCount[key] === maxAnswerCount);
+  }
+
+  setResults(result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else {
+      this.setState({ result: 'N/A' });
+    }
   }
 
   render() {
