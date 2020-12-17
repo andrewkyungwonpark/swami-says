@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header';
 import MainMenu from './main-menu';
-import Starter from './starter-page';
+import StarterPage from './starter-page';
 import ProBowl from './pro-bowl';
 import HallOfFame from './hall-of-fame';
 
@@ -34,7 +34,7 @@ export default class App extends React.Component {
         return (
           <>
             {header}
-            <Starter setView={this.setView} />
+            <StarterPage setView={this.setView} />
           </>
         );
       case 'pro-bowl':

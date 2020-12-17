@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import Question from './question';
 import QuestionCount from './question-count';
 import AnswerOptions from './answer-options';
@@ -24,27 +24,10 @@ export default class Starter extends React.Component {
   }
 
   componentDidMount() {
-    const shuffleAnswers = quizQuestions.map(question => this.shuffleArray(question.answers));
-
     this.setState({
       question: quizQuestions[0].question,
-      answerOptions: shuffleAnswers[0]
+      answerOptions: quizQuestions[0].answerOptions[0]
     });
-  }
-
-  shuffleArray(arr) {
-    let currentIndex = arr.length;
-    let tempValue;
-    let randomIndex;
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      tempValue = arr[currentIndex];
-      arr[currentIndex] = arr[randomIndex];
-      arr[randomIndex] = tempValue;
-    }
-    return arr;
   }
 
   setUserAnswer(answer) {
@@ -58,7 +41,7 @@ export default class Starter extends React.Component {
   }
 
   handleAnswerSelected(event) {
-    this.selectAnswer(event.currentTarget.value);
+    this.setUserAnswer(event.currentTarget.value);
     if (this.state.questionId < quizQuestions.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {

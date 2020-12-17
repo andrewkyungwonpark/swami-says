@@ -8,7 +8,8 @@ const quizQuestions = [
       { answerText: '11' },
       { answerText: '22' }
     ],
-    answer: 3
+    answer: 3,
+    correctText: 'Correct! EACH team has 11 players, making a grand total of 22 players on the field at once.'
   },
   {
     difficulty: 'starter',
@@ -19,7 +20,8 @@ const quizQuestions = [
       { answerText: 'Offense, defense, special teams' },
       { answerText: 'Offense, defense, coaching' }
     ],
-    answer: 2
+    answer: 2,
+    correctText: 'Correct! The three phases of American football are offense, defense, and special teams (kicking)!'
   },
   {
     difficulty: 'starter',
@@ -30,7 +32,8 @@ const quizQuestions = [
       { answerText: '7' },
       { answerText: '2' }
     ],
-    answer: 1
+    answer: 1,
+    correctText: 'Correct! A touchdown is worth 6 points. After the touchdown itself is the PAT (Point After Touchdown) which can add 1 or 2 additional points.'
   },
   {
     difficulty: 'starter',
@@ -41,7 +44,8 @@ const quizQuestions = [
       { answerText: '6' },
       { answerText: '7' }
     ],
-    answer: 0
+    answer: 0,
+    correctText: 'Correct! A field goal is worth 3 points.'
   },
   {
     diffiulty: 'starter',
@@ -52,7 +56,8 @@ const quizQuestions = [
       { answerText: 'Running back', isCorrect: false },
       { answerText: 'Defensive end', isCorrect: false }
     ],
-    answer: 1
+    answer: 1,
+    correct: 'Correct! While "wing" and "back" are both used separately, there is no such position as "wingback".'
   }
 ];
 
