@@ -16,4 +16,8 @@ export default class StarterPage extends React.Component {
       quizQuestions: QuizQuestions
     });
   }
+
+  // render() {
+
+  // }
 }
