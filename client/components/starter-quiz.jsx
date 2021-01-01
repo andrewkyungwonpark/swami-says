@@ -9,7 +9,7 @@ class StarterQuiz extends React.Component {
     answerOptions: [],
     score: 0,
     disabled: true,
-    isEnd: false
+    isFinished: false
   };
 
   loadQuizQuestions = () => {
@@ -36,5 +36,35 @@ class StarterQuiz extends React.Component {
     this.setState({
       currentQuestion: this.state.currentQuestion + 1
     });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.currentQuestion !== prevState.currentQuestion) {
+      this.setState(() => {
+        return {
+          disabled: true,
+          questions: QuizQuestions[this.state.currentQuestion].questionText,
+          answer: QuizQuestions[this.state.currentQuestion].answer,
+          answerOptions: QuizQuestions[this.state.currentQuestion].answerOptions
+        };
+      });
+    }
+  }
+
+  checkAnswer = answer => {
+    this.setState({ myAnswer: answer, disabled: false });
+  }
+
+  quizFinished = () => {
+    if (this.state.currentQuestion === QuizQuestions.length - 1) {
+      this.setState({
+        isFinished: true
+      });
+    }
+    if (this.state.myAnswer === this.state.answer) {
+      this.setState({
+        score: this.state.score + 1
+      });
+    }
   }
 }
