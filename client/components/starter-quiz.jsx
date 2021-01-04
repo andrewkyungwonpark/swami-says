@@ -66,5 +66,55 @@ class StarterQuiz extends React.Component {
         score: this.state.score + 1
       });
     }
+
+  }
+
+  render() {
+    const { answerOptions, myAnswer, currentQuestion, isFinished } = this.state;
+
+    // if(isFinished && this.state.score >= 4) {
+    //   return (
+    //   )
+    // } else if (isFinished && this.state.score === 3 ) {
+    //   return (
+
+    //   )
+    // } else if (isFinished && this.state.score <= 2) {
+    //   return (
+    //   )
+    // } else {
+    return (
+      <div className="App">
+        <h1>{this.state.questions} </h1>
+        <span>{`Questions ${currentQuestion}  out of ${QuizQuestions.length -
+          1} remaining `}</span>
+        {answerOptions.map(option => (
+          <p
+            key={option.id}
+            className={`ui floating-msg
+         ${myAnswer === option ? 'selected' : null}
+         `}
+            onClick={() => this.checkAnswer(option)}
+          >
+            {option}
+          </p>
+        ))}
+        {currentQuestion < QuizQuestions.length - 1 && (
+          <button
+            className="inverted-btn"
+            disabled={this.state.disabled}
+            onClick={this.nextQuestionHandler}
+          >
+            Next
+          </button>
+        )}
+        {/* //add a finish button later */}
+        {currentQuestion === QuizQuestions.length - 1 && (
+          <button className="inverted-btn" onClick={this.finishHandler}>
+            Finish
+          </button>
+        )}
+      </div>
+    );
   }
 }
