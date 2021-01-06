@@ -80,8 +80,21 @@ class StarterQuiz extends React.Component {
 
     //   )
     // } else if (isFinished && this.state.score <= 2) {
-    //   return (
-    //   )
+    // return (
+    //   <div className="result">
+    //     <h3>Game Over your Final score is {this.state.score} points </h3>
+    //     <div>
+    //       The correct answer's for the questions was
+    //       <ul>
+    //         {QuizQuestions.map((item, index) => (
+    //           <li className="ui floating message options" key={index}>
+    //             {item.answer}
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     </div>
+    //   </div>
+    // );
     // } else {
     return (
       <div className="App">
