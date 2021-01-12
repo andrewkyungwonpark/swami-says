@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swami Says - Test your American Football knowledge!</title>
-  <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div id="root"></div>
-  <script src="main.js"></script>
+  <div class="container">
+    <div class="header d-flex justify-content-center row">
+      <img class="swami-title d-flex" src="../images/swami.png" />
+      <h2 class="d-flex justify-content-center align-items-center white">
+        Swami Says &#58; Choose Your Difficulty!
+      </h2>
+      <img class="swami-title d-flex" src="../images/swami.png" />
+    </div>
+    <div class="difficulty row justify-content-center d-flex">
+      <div class="col-md-3 mb-3 d-flex">
+        <div class="card">
+          <img class="card-img-top" src="../images/nfl-logo.png" alt="NFL logo" />
+          <div class="card-body">
+            <h5 class="card-title">Starter</h5>
+            <p class="card-text">5 questions of basic knowledge</p>
+            <a class="btn btn-warning">Start Quiz!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3 d-flex">
+        <div class="card">
+          <img class="card-img-top" src="../images/pro-bowl.png" alt="Pro Bowl Logo" />
+          <div class="card-body">
+            <h5 class="card-title">Pro Bowl</h5>
+            <p class="card-text">10 questions of intermediate knowledge of football</p>
+            <a class="btn btn-warning">Start Quiz!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3 d-flex">
+        <div class="card">
+          <img class="card-img-top" src="../images/nfl-hof.png" alt="HOF Logo" />
+          <div class="card-body">
+            <h5 class="card-title">Hall of Fame</h5>
+            <p class="card-text">20 questions of advanced concepts</p>
+            <a class="btn btn-warning">Start Quiz!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
