@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 const quizQuestions = [
   {
     difficulty: 'starter',
@@ -61,3 +61,6 @@ const quizQuestions = [
     correct: 'Correct! While "wing" and "back" are both used separately, there is no such position as "wingback".'
   }
 ];
+
+const correctAnswers = 0;
+const startBtn = document.getElementById('start-btn');
