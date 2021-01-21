@@ -45,3 +45,13 @@ body {
 #home-btn:hover {
   background-color: grey;
 }
+
+.intro {
+  background-color: whitesmoke;
+  box-shadow: 3px 3px grey, -1em 0 .4em grey;
+  border-radius: .5rem;
+}
+
+.start-btn {
+  outline: black;
+}
