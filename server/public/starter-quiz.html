@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swami Says - Starter</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="header d-flex justify-content-center row">
+    <img class="swami-title d-flex" src="../images/swami.png" />
+    <h2 class="d-flex justify-content-center align-items-center white">
+      Swami Says &#58; Starter
+    </h2>
+    <img class="swami-title d-flex" src="../images/swami.png" />
+    <div class="intro p-5 mt-4 mb-4">
+      <h4>Test your knowledge on the game of American football, and the Swami himself shall deem whether your knowledge is
+      worthy!</h4>
+      <p>You've chosen the "Starter" difficulty - the following 5 questions are the easiest of the bunch!</p>
+    </div>
+    </div>
+    <div class="question-container d-none">
+      <div class="question d-none">
+        <div class="answers d-none">
+          <button class="btn"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+        </div>
+      </div>
+      <div class="scoreboard">
+          <div class="explanation d-none">Swami Says:</div>
+          <div class="final-score d-none">Swami Says:</div>
+      </div>
+    </div>
+    <div class="buttons d-flex justify-content-center">
+      <button class="start-btn btn btn-warning">Start</button>
+      <button class="next-question-btn btn btn-warning d-none">Next</button>
+      <button class="main-menu-btn btn btn-warning d-none">Go Back to Main Menu</button>
+    </div>
+  </div>
+  <script src="../../client/components/starter-script.js"></script>
+</body>
+</html>
