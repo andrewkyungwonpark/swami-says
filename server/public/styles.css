@@ -24,6 +24,13 @@ body {
   object-fit: scale-down
 }
 
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
 .swami-title {
   width: auto;
   height: 150px;
@@ -54,4 +61,12 @@ body {
 
 .start-btn {
   outline: black;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
 }
