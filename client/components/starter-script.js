@@ -1,34 +1,34 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-prototype-builtins */
 const quizQuestions = [
   {
     questionText: 'A game of American football has how many TOTAL players on the field at any given time?',
     answerOptions: ['10', '18', '11', '22'],
     correctAnswer: 3,
-    correctText: 'EACH team has 11 players, making a grand total of 22 players on the field at once.'
+    correctText: 'Swami Says: EACH team has 11 players, making a grand total of 22 players on the field at once.'
   },
   {
     questionText: 'The three phases of American football are:',
     answerOptions: ['Pitching, hitting, defense', 'Offense, defense, penalty-killing', 'Offense, defense, special teams', 'Offense, defense, coaching'],
     correctAnswer: 2,
-    correctText: 'The three phases of American football are offense, defense, and special teams (kicking)!'
+    correctText: 'Swami Says: The three phases of American football are offense, defense, and special teams (kicking)!'
   },
   {
     questionText: 'A touchdown is worth how many points?',
     answerOptions: ['3', '6', '7', '2'],
     correctAnswer: 1,
-    correctText: 'A touchdown is worth 6 points. After the touchdown itself is the PAT (Point After Touchdown) which can add 1 or 2 additional points.'
+    correctText: 'Swami Says: A touchdown is worth 6 points. After the touchdown itself is the PAT (Point After Touchdown) which can add 1 or 2 additional points.'
   },
   {
     questionText: 'How many points is a field goal worth?',
     answerOptions: ['3', '2', '6', '7'],
     correctAnswer: 0,
-    correctText: 'A field goal is worth 3 points.'
+    correctText: 'Swami Says: A field goal is worth 3 points.'
   },
   {
     questionText: 'Which of the following is NOT a position in American football?',
     answerOptions: ['Quarterback', 'Wingback', 'Running back', 'Defensive end'],
     correctAnswer: 1,
-    correct: 'While "wing" and "back" are both used separately, there is no such position as "wingback".'
+    correctText: 'Swami Says: While "wing" and "back" are both used separately in American Football, there is no such position as "wingback".'
   }
 ];
 
@@ -57,6 +57,8 @@ function startGame() {
   startBtn.classList.add('d-none');
   nextQuestionBtn.classList.add('d-none');
   questionContainer.classList.remove('d-none');
+  questionContainer.classList.add('card');
+  mainMenuBtn.classList.add('d-none');
   finalScore.classList.add('d-none');
   intro.classList.add('d-none');
   nextQuestion();
@@ -68,15 +70,18 @@ function nextQuestion() {
 }
 
 function displayQuestion(question) {
-  questionElement.innerText = question.questionText;
+  questionElement.innerHTML = `<h3>${question.questionText}</h3>`;
   answerBtns.classList.remove('disable');
   let i = 0;
+  if (question.hasOwnProperty('correctText')) {
+    explanationText.innerHTML = `<p>${question.correctText}</p>`;
+  }
   question.answerOptions.forEach(correctAnswer => {
     const button = document.createElement('button');
     button.innerText = question.answerOptions[i];
     button.classList.add('btn', 'btn-primary');
     if (i === question.correctAnswer) {
-      button.dataset.correct = correctAnswer.correctAnswer;
+      button.dataset.correct = correctAnswer.correct;
     }
     button.addEventListener('click', selectAnswerHandler);
     answerBtns.appendChild(button);
@@ -95,8 +100,11 @@ function resetPage() {
 
 function selectAnswerHandler(event) {
   const selectedAnswer = event.target;
-  const correctChoice = selectedAnswer.dataset.correct;
-  checkAnswer(document.body, correctChoice);
+  const correct = selectedAnswer.dataset.correct;
+  if (selectedAnswer.hasAttribute('data-correct')) {
+    correctUserAnswers++;
+  }
+  checkAnswer(document.body, correct);
   Array.from(answerBtns.children).forEach(button => {
     checkAnswer(button, button.dataset.correct);
   });
@@ -124,9 +132,6 @@ function selectAnswerHandler(event) {
         `<div>You got ${correctUserAnswers} correct out of ${quizQuestions.length}.</div>
       <div>Swami Says: You're rumblin', bumblin', stumblin'...try again!</div>`;
     }
-  }
-  if (selectedAnswer.dataset === correctChoice) {
-    correctUserAnswers++;
   }
 }
 

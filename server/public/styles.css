@@ -59,14 +59,16 @@ body {
   border-radius: .5rem;
 }
 
-.start-btn {
+.btn:hover {
+  border-color: black;
+}
+
+.btn.correct {
+  background-color: limegreen;
   outline: black;
 }
 
-.correct {
-  background-color: green;
-}
-
-.wrong {
+.btn.wrong {
   background-color: red;
+  color:black;
 }
