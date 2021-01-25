@@ -61,7 +61,7 @@ const quizQuestions = [
     correctText: 'An "intentional grounding" penalty results in a loss of down, and loss of yards based on where the foul was committed.'
   },
   {
-    questionText: 'In which situation does the game clock NOT stop',
+    questionText: 'In which situation does the game clock NOT stop?',
     answerOptions: ['Player with the ball stepping out of bounds at any given time',
       'Incomplete pass',
       'Player with the ball stepping out of bounds with under 2 minutes left in the first half',
@@ -70,9 +70,129 @@ const quizQuestions = [
     correctText: 'If a player with the ball steps out of bounds and there are more than 2 minutes left in the first half OR more than 5 minutes left in the second half, the clock will keep running. All incomplete passes will stop the clock.'
   },
   {
-    questionText: 'The “play clock” is how long in duration',
+    questionText: 'The “play clock” is how long in duration?',
     answerOptions: ['25 seconds', '30 seconds', '15 seconds', '40 seconds'],
     correctAnswer: 3,
     correctText: 'The play clock resets at 40 seconds after the completion of a down.'
   }
 ];
+
+let correctUserAnswers;
+const intro = document.querySelector('.intro');
+const startBtn = document.querySelector('.start-btn');
+const nextQuestionBtn = document.querySelector('.next-question-btn');
+const mainMenuBtn = document.querySelector('.main-menu-btn');
+const questionContainer = document.querySelector('.question-container');
+const questionPhoto = document.querySelector('.photo');
+const questionElement = document.querySelector('.question');
+const explanationText = document.querySelector('.explanation');
+const answerBtns = document.querySelector('.answers');
+const finalScore = document.querySelector('.final-score');
+
+let currentQuestion;
+
+startBtn.addEventListener('click', startGame);
+nextQuestionBtn.addEventListener('click', () => {
+  currentQuestion++;
+  nextQuestion();
+});
+
+function startGame() {
+  correctUserAnswers = 0;
+  currentQuestion = 0;
+  startBtn.classList.add('d-none');
+  nextQuestionBtn.classList.add('d-none');
+  questionContainer.classList.remove('d-none');
+  questionContainer.classList.add('card');
+  mainMenuBtn.classList.add('d-none');
+  finalScore.classList.add('d-none');
+  intro.classList.add('d-none');
+  nextQuestion();
+}
+
+function nextQuestion() {
+  resetPage();
+  displayQuestion(quizQuestions[currentQuestion]);
+}
+
+function displayQuestion(question) {
+  questionElement.innerHTML = `<h3>${question.questionText}</h3>`;
+  questionPhoto.innerHTML = `<img src="${question.picture}">`;
+  answerBtns.classList.remove('disable');
+  let i = 0;
+  if (question.hasOwnProperty('correctText')) {
+    explanationText.innerHTML = `<p><b>Swami says: </b>${question.correctText}</p>`;
+  }
+  question.answerOptions.forEach(correctAnswer => {
+    const button = document.createElement('button');
+    button.innerText = question.answerOptions[i];
+    button.classList.add('btn', 'btn-primary');
+    if (i === question.correctAnswer) {
+      button.dataset.correct = correctAnswer.correct;
+    }
+    button.addEventListener('click', selectAnswerHandler);
+    answerBtns.appendChild(button);
+    i++;
+  });
+}
+
+function resetPage() {
+  resetAnswerOptions(document.body);
+  nextQuestionBtn.classList.add('d-none');
+  explanationText.classList.add('d-none');
+  while (answerBtns.firstChild) {
+    answerBtns.removeChild(answerBtns.firstChild);
+  }
+}
+
+function selectAnswerHandler(event) {
+  const selectedAnswer = event.target;
+  const correct = selectedAnswer.dataset.correct;
+  if (selectedAnswer.hasAttribute('data-correct')) {
+    correctUserAnswers++;
+  }
+  checkAnswer(document.body, correct);
+  Array.from(answerBtns.children).forEach(button => {
+    checkAnswer(button, button.dataset.correct);
+  });
+
+  if (quizQuestions.length > currentQuestion + 1) {
+    nextQuestionBtn.classList.remove('d-none');
+    explanationText.classList.remove('d-none');
+    answerBtns.classList.add('disable');
+  } else {
+    startBtn.innerHTML = 'Restart Quiz';
+    startBtn.classList.remove('d-none');
+    explanationText.classList.add('d-none');
+    finalScore.classList.remove('d-none');
+    mainMenuBtn.classList.remove('d-none');
+    explanationText.classList.remove('d-none');
+    if (correctUserAnswers >= 4) {
+      finalScore.innerHTML =
+        `<div>You got <b>${correctUserAnswers}</b> correct out of <b>${quizQuestions.length}</b>.</div>
+      <div><b>Swami Says</b>: HE...COULD...GO...ALL...THE...WAY!! You have a good, basic understanding of American football!</div>`;
+    } else if (correctUserAnswers === 2 || correctUserAnswers === 3) {
+      finalScore.innerHTML =
+        `<div>You got <b>${correctUserAnswers} correct out of ${quizQuestions.length}</b>.</div>
+      <div><b>Swami Says</b>: WHOOP! You're...okay in your basic knowledge of American football</div>`;
+    } else {
+      finalScore.innerHTML =
+        `<div>You got <br>${correctUserAnswers} correct out of ${quizQuestions.length}</b>.</div>
+      <div><b>Swami Says</b>: You're rumblin', bumblin', stumblin'...try again!</div>`;
+    }
+  }
+}
+
+function checkAnswer(element, correct) {
+  resetAnswerOptions(element);
+  if (correct) {
+    element.classList.add('correct');
+  } else {
+    element.classList.add('wrong');
+  }
+}
+
+function resetAnswerOptions(element) {
+  element.classList.remove('correct');
+  element.classList.remove('wrong');
+}
