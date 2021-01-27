@@ -27,8 +27,25 @@ body {
 .answers {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 2rem;
-  margin: 4rem 0;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.pro-bowl-answers {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: .5rem;
+  margin: 1rem 0;
+}
+
+.pro-bowl-answers > button {
+  white-space: normal;
+}
+
+img {
+width: 600px;
+height: 300px;
+object-fit: contain;
 }
 
 .swami-title {
