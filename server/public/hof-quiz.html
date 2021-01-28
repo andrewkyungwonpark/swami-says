@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swami Says - Pro Bowl</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header d-flex justify-content-center row">
+      <img class="swami-title d-flex" src="../images/swami.png" />
+      <h2 class="d-flex justify-content-center align-items-center white">
+        Swami Says &#58; Hall of Fame
+      </h2>
+      <img class="swami-title d-flex" src="../images/swami.png" />
+      <div class="intro p-3 mt-4 mb-4">
+        <h4>Test your knowledge on the game of American football, and the Swami himself shall deem whether your
+          knowledge is
+          worthy!</h4>
+        <p>You've chosen the "Hall of Fame" difficulty - Can...you...go...all...the...way???</p>
+      </div>
+    </div>
+    <div class="question-container d-flex mt-2 p-2 d-none">
+      <div class="photo d-flex justify-content-center"></div>
+      <div class="video d-flex justify-content-center"></div>
+      <div class="question d-flex justify-content-center"></div>
+      <div class="pro-bowl-answers justify-content-center"></div>
+      <div class="scoreboard">
+        <div class="explanation d-none"></div>
+        <div class="final-score d-none"></div>
+      </div>
+    </div>
+    <div class="buttons d-flex justify-content-center">
+      <button class="start-btn btn btn-warning m-4">Start</button>
+      <button class="next-question-btn btn btn-warning d-none m-4">Next</button>
+      <a href="index.html" class="main-menu-btn btn btn-warning d-none m-4">Go Back to Main Menu</a>
+    </div>
+  </div>
+  <script src="../../client/components/hof-script.js"></script>
+</body>
+
+</html>
