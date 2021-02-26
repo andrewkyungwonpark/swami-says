@@ -64,6 +64,10 @@ object-fit: contain;
   src: url(../images/swami-flip.png);
 }
 
+.disclaimer {
+  color:white;
+}
+
 .football-img {
   width: 25px;
   height: 25px
