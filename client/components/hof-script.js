@@ -263,14 +263,14 @@ function selectAnswerHandler(event) {
     finalScore.classList.remove('d-none');
     mainMenuBtn.classList.remove('d-none');
     explanationText.classList.remove('d-none');
-    if (correctUserAnswers >= 9) {
+    if (correctUserAnswers >= 18) {
       finalScore.innerHTML =
         `<div>You got <b>${correctUserAnswers}</b> correct out of <b>${quizQuestions.length}</b>.</div>
-      <div><b>Swami Says</b>: HE...COULD...GO...ALL...THE...WAY!! You have a good, basic understanding of American football!</div>`;
-    } else if (correctUserAnswers >= 5 && correctUserAnswers < 9) {
+      <div><b>Swami Says</b>: HE...COULD...GO...ALL...THE...WAY!! You're on your way to being inducted into the Hall of Fame!</div>`;
+    } else if (correctUserAnswers >= 10 && correctUserAnswers < 18) {
       finalScore.innerHTML =
         `<div>You got <b>${correctUserAnswers} correct out of ${quizQuestions.length}</b>.</div>
-      <div><b>Swami Says</b>: WHOOP! You're...okay in your basic knowledge of American football</div>`;
+      <div><b>Swami Says</b>: WHOOP! You're not bad in your advanced knowledge of American football! Keep watching and learning!</div>`;
     } else {
       finalScore.innerHTML =
         `<div>You got <br>${correctUserAnswers} correct out of ${quizQuestions.length}</b>.</div>
