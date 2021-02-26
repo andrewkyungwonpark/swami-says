@@ -48,9 +48,20 @@ height: 300px;
 object-fit: contain;
 }
 
-.swami-title {
+.swami-title,
+.swami-title-2 {
   width: auto;
   height: 150px;
+}
+
+.swami-title:hover,
+.swami-title-2:hover {
+  cursor: pointer;
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
+  src: url(../images/swami-flip.png);
 }
 
 .football-img {
