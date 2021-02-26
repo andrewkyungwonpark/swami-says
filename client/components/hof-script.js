@@ -84,7 +84,7 @@ const quizQuestions = [
   {
     questionText: 'The following diagram shows WHICH route concept?',
     answerOptions: ['Verticals', 'All Go', 'All Streaks', 'Leroy Jenkins'],
-    picture: '../images/ohi.jpg',
+    picture: '../images/verticals.jpg',
     correctAnswer: 0,
     correctText: 'The "Vericals" route concept is a simple deep pass concept that involes sending 3-4 receivers straight down the field.',
     material: 'Common Pass Routes and Route Combos',
@@ -120,7 +120,7 @@ const quizQuestions = [
   {
     questionText: 'The following picture shows WHICH type of defense?',
     answerOptions: ['Cover 2', 'Cover 3', 'Cover 4', 'Man'],
-    picture: '../images/cover-4.jpg',
+    picture: '../images/cover-4.png',
     correctAnswer: 2,
     correctText: 'Cover 4 defense is a zone defense that this time uses 4 defenders to cover the field equally. Usually used to defend the deep pass.',
     material: 'Football Defensive Schemes: The Basics You Should Know',
@@ -129,7 +129,7 @@ const quizQuestions = [
   {
     questionText: 'The following picture shows WHICH type of defense?',
     answerOptions: ['Cover 2', 'Cover 4', 'Man', 'Cover 3'],
-    picture: '../images/man-to-man.jpg',
+    picture: '../images/man-to-man.png',
     correctAnswer: 2,
     correctText: 'Man defense is the opposite of zone defense - instead of a defender guarding one area of the field, the defender instead guards the individual opposing player.',
     material: 'Football Defensive Schemes: The Basics You Should Know',
@@ -138,14 +138,14 @@ const quizQuestions = [
   {
     questionText: 'The following picture shows WHICH type of defense?',
     answerOptions: ['Man', 'Cover 3', 'Cover 2', 'Cover 4'],
-    picture: '../images/cover-3.jpg',
+    picture: '../images/cover-3.png',
     correctAnswer: 1,
     correctText: 'Cover 3 defense is a zone defense that instead uses 3 defenders to each cover a third of the field.',
     material: 'Football Defensive Schemes: The Basics You Should Know',
     correctTextLink: 'https://www.stack.com/a/football-defensive-schemes-the-basics-you-should-know'
   },
   {
-    questionText: 'The following sequence displays WHICH kind of defensive line concept?',
+    questionText: 'The following sequence displays WHICH kind of defensive line concept (watch the two on the left)?',
     answerOptions: ['Swim', 'Swing', 'Sting', 'Stunt'],
     picture: '../images/dline-stunt.gif',
     correctAnswer: 3,
@@ -158,7 +158,7 @@ const quizQuestions = [
     answerOptions: ['Counter', 'Trap', 'Sweep', 'Dive'],
     picture: '../images/counter-run.gif',
     correctAnswer: 0,
-    correctText: 'A "counter" is a popular type of running play that has the running back start runnign in one direction, but immediately flip the other way, thereby "countering" the defense.',
+    correctText: 'A "counter" is a popular type of running play that has the running back start runnign in one direction, but immediately flip the other way, thereby "countering" the defense. Also usually involes multiple offensive linemen "pulling" to the other side of the field as well.',
     material: 'A million ways to run counter',
     correctTextLink: 'https://www.footballstudyhall.com/2018/12/20/18147006/a-million-ways-to-run-counter-gt-counter-trey-oklahoma-memphis-ucf'
   },
@@ -170,6 +170,15 @@ const quizQuestions = [
     correctText: 'A "stretch" is a type of zone running play that involves the entire offensive line running in the same direction and instead of blocking a specific person, block a "zone" in front of them.',
     material: '3 Keys to a Successful Stretch Play',
     correctTextLink: 'https://joedanielfootball.com/footballstretchplay/'
+  },
+  {
+    questionText: 'The following play is a trick play known as...',
+    answerOptions: ['Pass and Shoot', 'Hook and Ladder', 'Snakes on a Plane', 'Hot Potato'],
+    picture: '../images/hook-n-ladder.gif',
+    correctAnswer: 1,
+    correctText: 'A "hook and ladder" (or sometimes called hook and lateral) is a trick play where the first receiver runs a set amount of yards on a curl (or hook), then laterals the ball to another player running to the outside.',
+    material: 'Hook and ladder (football)',
+    correctTextLink: 'https://en.wikipedia.org/wiki/Hook_and_ladder_(football)'
   }
 ];
 
