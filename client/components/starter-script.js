@@ -31,7 +31,6 @@ const quizQuestions = [
     correctText: 'While "wing" and "back" are both used separately in American Football, there is no such position as "wingback".'
   }
 ];
-
 const swamiSounds = [
   '../audio/back-back-back.mp3',
   '../audio/berman-whoop.mp3',
