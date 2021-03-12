@@ -196,3 +196,6 @@ function resetAnswerOptions(element) {
   element.classList.remove('correct');
   element.classList.remove('wrong');
 }
+
+const mnfTheme = document.getElementById('mnf-theme');
+mnfTheme.volume = 0.2;
