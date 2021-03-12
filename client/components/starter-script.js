@@ -198,4 +198,4 @@ function resetAnswerOptions(element) {
 }
 
 const mnfTheme = document.getElementById('mnf-theme');
-mnfTheme.volume = 0.2;
+mnfTheme.volume = 0.1;
