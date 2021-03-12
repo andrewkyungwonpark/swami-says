@@ -1,8 +1,8 @@
 const swamiSounds = [
-  '../audio/back-back-back.mp3',
-  '../audio/berman-whoop.mp3',
-  '../audio/he-could-go-all-the-way.mp3',
-  '../audio/hello.mp3'
+  '../server/audio/back-back-back.mp3',
+  '../server/audio/berman-whoop.mp3',
+  '../server/audio/he-could-go-all-the-way.mp3',
+  '../server/audio/hello.mp3'
 ];
 
 let sound;
@@ -21,15 +21,19 @@ function playSound() {
   }
 
   if (randomIndex === 1) {
-    sound.src = '../audio/back-back-back.mp3';
+    sound.src = swamiSounds[0];
   } else if (randomIndex === 2) {
-    sound.src = '../audio/berman-whoop.mp3';
+    sound.src = swamiSounds[1];
   } else if (randomIndex === 3) {
-    sound.src = '../audio/he-could-go-all-the-way.mp3';
+    sound.src = swamiSounds[2];
   } else if (randomIndex === 4) {
-    sound.src = '../audio/hello.mp3';
+    sound.src = swamiSounds[3];
   }
-  sound.play();
+  sound.play()
+    .catch(error => {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    });
 }
 
 const swamiTitle = document.querySelector('.swami-title');
