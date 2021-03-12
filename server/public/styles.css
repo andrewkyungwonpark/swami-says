@@ -66,6 +66,9 @@ object-fit: contain;
 
 .disclaimer {
   color:white;
+}
+
+.disclaimer span {
   background-color: black;
 }
 
